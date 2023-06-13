@@ -104,11 +104,11 @@ const ScrollSlider=()=>{
         {
             carouselData.map((data, index)=>
             <SwiperSlide key={data._id} className={index === activeSlideIndex ? "fade-in active":"fade-in"} style={index === activeSlideIndex ? {boxShadow: "1px 2px 10px rgba(12, 70, 117, .5)"} : {boxShadow:"none", opacity:".5"}}>
-            <div className="lg:h-full  px-10 py-9 mt-14 relative">
-                <span className="w-20 rounded-full bg-[#D82027] lg:mt-[295px] mt-[452px] ml-[31%] lg:ml-[37%] h-[8px] absolute"></span>
+            <div className="lg:h-full px-7 lg:px-10 lg:py-9 py-7 mt-14 relative">
+                <span className="w-20 rounded-full bg-[#D82027] lg:mt-[295px] mt-[534px] ml-[28%] lg:ml-[37%] h-[8px] absolute"></span>
                   <h4 className="text-2xl left-9 text-gray-900 font-medium mb-5">{data.title}</h4>
                     <p className="text-xl font-normal leading-9 text-[#5F718A]">{data.description}</p>
-                    <div className="mt-5 flex items-center">
+                    <div className="lg:mt-5 mt-7 flex items-center">
                         <img className="w-16" src={data.img} alt="" />
                         <div className="ml-3">
                             <h1 className="text-xl font-semibold">{data.name}</h1>

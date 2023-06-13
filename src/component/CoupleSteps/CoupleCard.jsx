@@ -26,7 +26,7 @@ const CoupleCard=()=>{
     }
   ]
 
-    return <div className="mt-8 grid lg:grid-cols-3 grid-cols-1 gap-x-8 bg-white justify-center items-center">
+    return <div className="mt-8 grid lg:grid-cols-3 grid-cols-1 lg:gap-x-8 gap-x-0 bg-white justify-center items-center">
 
       <img className="absolute lg:block hidden top-[72px] right-[54%]" src={graphImg} alt="" />
       <img className="absolute lg:block hidden top-[84%] right-[24%] imgRotate" src={graphImg} alt="" />

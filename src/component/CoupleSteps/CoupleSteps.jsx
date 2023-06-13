@@ -13,7 +13,7 @@ const CoupleSteps=()=>{
         <div>
             <h1 className="text-4xl font-medium text-center mt-3 text-[#1B2336]">Start your journey with couple of steps</h1>
         </div>
-        <div className="flex justify-center h-[500px] relative">
+        <div className="flex justify-center lg:h-[500px] h-full w-full relative px-4 lg:px-0 mx-auto">
            <CoupleCard />
         </div>
         <div>

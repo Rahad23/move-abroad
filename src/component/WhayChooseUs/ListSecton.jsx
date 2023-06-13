@@ -47,10 +47,10 @@ const ListSection=()=>{
         }
     ]
 
-    return <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 mt-10">
+    return <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-5 mt-10">
         {
             listData.map(data=>
-                <div className="card w-96 rounded-none py-14 px-3 hoverEffect cursor-pointer" data-aos="fade-up"
+                <div className="card lg:w-96 w-80 rounded-none py-14 px-3 hoverEffect cursor-pointer" data-aos="fade-up"
                 data-aos-duration="2000" key={data._id}>
 
                 <div className="grid px-1" style={{gridTemplateColumns:"1fr 4fr"}}>
