@@ -29,10 +29,10 @@ const HomeOfferCard=()=>{
     }
     ]
 
-    return <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-x-6 gap-y-8">
+    return <div className="grid lg:grid-cols-3 grid-cols-1 lg:px-0 px-5 lg:gap-x-6 gap-y-8">
         {
         offerCard.map(data=>
-                <div className="card w-96 bg-white p-5" style={{boxShadow:"5px 13px 67px 34px rgba(200, 214, 229,.7)"}} key={data.id} data-aos="fade-up">
+                <div className="card lg:w-96 w-80 bg-white p-5" style={{boxShadow:"5px 13px 67px 34px rgba(200, 214, 229,.7)"}} key={data.id} data-aos="fade-up">
        {/* <div className="pt-11 grid" style={{gridTemplateColumns:"60px 4fr"}}> */}
         
                <div className="card-body" >  

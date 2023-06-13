@@ -47,14 +47,14 @@ const ListSection=()=>{
         }
     ]
 
-    return <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-5 mt-10">
+    return <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-5 lg:mt-10 mt-3">
         {
             listData.map(data=>
                 <div className="card lg:w-96 w-80 rounded-none py-14 px-3 hoverEffect cursor-pointer" data-aos="fade-up"
                 data-aos-duration="2000" key={data._id}>
 
-                <div className="grid px-1" style={{gridTemplateColumns:"1fr 4fr"}}>
-                    <div className="flex justify-center items-center bg-[#3E465D] w-14 h-14 rounded-full setHoverEffect">
+                <div className="grid px-1 justify-center items-center flex-row" style={{gridTemplateColumns:"1fr 4fr"}}>
+                    <div className="flex justify-center items-center bg-[#3E465D] w-14 h-14 rounded-full lg:mr-0 mr-4 setHoverEffect">
                         {
                             data.icon
                         }
