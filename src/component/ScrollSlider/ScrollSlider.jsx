@@ -87,7 +87,7 @@ const ScrollSlider=()=>{
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 20,
-          stretch: -60,
+          stretch: -90,
           depth: 500,
           modifier: 1,
           slideShadows: false,
