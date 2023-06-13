@@ -5,7 +5,7 @@ import HomeOffer from "../HomeOffer/HomeOffer";
 import ScrollSlider from "../ScrollSlider/ScrollSlider";
 
 const Home=()=>{
-    return <div>
+    return <div className="bg-[#ffffff]">
         <Banner />
         <div className="mt-28" data-aos="fade-up" data-aos-delay="300">
             <HomeOffer />
