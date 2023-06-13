@@ -1,0 +1,4 @@
+.hoverEffect:hover .setHoverEffect{
+    background-color: #D82027;
+    transition: .5s;
+}

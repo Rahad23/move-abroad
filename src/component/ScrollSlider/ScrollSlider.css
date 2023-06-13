@@ -1,0 +1,68 @@
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+    width: 80%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 600px;
+    /* transform: rotateY(90deg) translateZ(356px) rotateY(-2160deg); */
+    height: 450px;
+    background-color: white;
+    transition: 1s;
+    border-radius: 20px;
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transition-duration: 1s!important;
+    /* transition-delay: .6s!important; */
+  }
+  
+  .fade-in.active {
+    opacity: 1;
+  }
+
+  .swiper-slide img {
+    display: block;
+    border-radius: 20px;
+  }
+
+
+  @media (max-width: 768px) { 
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 400px;
+        height: 550px;
+        background-color: white;
+        box-shadow: 4px 9px 20px rgba(12, 70, 117,.5);
+        border-radius: 20px;
+      }
+      .swiper {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-top: 100%;
+      }
+   }
+
+   

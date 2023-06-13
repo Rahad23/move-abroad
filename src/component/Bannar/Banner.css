@@ -1,0 +1,11 @@
+.bgImg{
+    background-image: url("../../assets/web-img/home5_slider_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.responsiveBgImg{
+    background-image: url("../../assets/web-img/home5_slider_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 400px;
+}

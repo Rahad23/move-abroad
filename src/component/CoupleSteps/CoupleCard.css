@@ -1,0 +1,34 @@
+
+.innerShadow{
+    box-shadow: inset 4px 0 10px rgba(216, 32, 39);
+    box-shadow:  4px 0 10px rgba(216, 32, 39,.4);
+}
+
+.border-animate { 
+    display:inline-block;
+    margin:0;
+    /* border-bottom: solid 2px rgb(22, 19, 19); */
+    /* text-transform:uppercase;  */
+}
+.border-animate:after {
+  display:block;
+  content: '';
+  border-bottom: solid 2px rgb(22, 19, 19);  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.border-animate:after{ transform-origin: 100% 50%; }
+/* h1.fromRight:after{  transform-origin:   0% 50%; } */
+.border-animate:hover:after{ transform: scaleX(1); transform-origin:   1% 50%; }
+/* h1.fromRight:hover:after{ transform: scaleX(1); transform-origin: 100% 50%; } */
+
+.hoverEffect:hover .hoverChangeShadow{
+    box-shadow: inset 4px 0 10px #274396;
+    box-shadow:  4px 0 10px rgba(39, 67, 150, .4);
+    border-color: #274396;
+    transition: .5s;
+}
+
+.imgRotate{
+    transform: rotateX(-180deg)
+}
