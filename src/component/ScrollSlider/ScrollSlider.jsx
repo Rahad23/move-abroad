@@ -80,7 +80,7 @@ const ScrollSlider=()=>{
     return <div className="mt-10">
          <Swiper
          {...swiperOptions}
-         ref={swiperRef}
+        ref={swiperRef}
         effect="coverflow"
         grabCursor={true}
         centeredSlides={true}

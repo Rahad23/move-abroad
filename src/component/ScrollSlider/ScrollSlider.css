@@ -23,12 +23,12 @@ body {
   .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 600px;
+    width: 700px;
     /* transform: rotateY(90deg) translateZ(356px) rotateY(-2160deg); */
-    height: 450px;
+    height: 392px;
     background-color: white;
     transition: 1s;
-    border-radius: 20px;
+    border-radius: 10px;
   }
   
   .fade-in {
