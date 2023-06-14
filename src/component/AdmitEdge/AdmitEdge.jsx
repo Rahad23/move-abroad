@@ -13,8 +13,8 @@ export class AdmitEdge extends Component {
       <div className="bgImg-edge mt-24">
         <div className="overlay z-50 p-6">
             <div className="text-center mt-10 z-40">
-            <h1 className="text-[38px] text-white font-medium">
-              AdmitEDGE Admission Genie
+            <h1 className="text-[38px] text-white font-semibold">
+              <span className="uppercase font-semibold">Move<span className="text-[#D82027] font-semibold">Abroad</span></span> Admission Genie
             </h1>
             <p className="text-[26px] text-white">
               Best Path To Your Dream Admit - Granted in just 4 clicks!

@@ -7,7 +7,7 @@ import { RxCross2 } from "react-icons/rx";
 
 import { Link } from 'react-router-dom';
 import NavebarSearch from './NavebarSearch';
-
+import "./Footer.css";
 const Navebar= () => {
 
     const [icon, setIcon]=useState(false);
@@ -44,12 +44,12 @@ return (
     <ul className="menu menu-horizontal px-1">
     <li className="dropdown">
   <label tabIndex={0} className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>Study Abroad<RiArrowDropDownLine className='text-2xl text-[#94A0B9]' /></label>
-  <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52">
-    <li><a>Undergraduate</a></li>
-    <li><a>Masters</a></li>
-    <li><a>Phd</a></li>
-    <li><a>Diploma</a></li>
-    <li><a>Evaluate your profile</a></li>
+  <ul tabIndex={0} className="p-2 dropdown-content shadow hover:bg-white text-gray-950 focus:text-gray-950 bg-white w-52">
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Undergraduate</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Masters</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Phd</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Diploma</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Evaluate your profile</a></li>
   </ul>
         {/* <a>Pages</a> */}
         </li>
@@ -57,30 +57,30 @@ return (
       <li className="dropdown">
   <label tabIndex={0} className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>Jobs in Abroad<RiArrowDropDownLine className='text-2xl text-[#94A0B9]' /></label>
   <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52">
-    <li><a>Skilled</a></li>
-    <li><a>Unskilled</a></li>
-    <li><a>Sponsored</a></li>
-    <li><a>Non sponsored</a></li>
-    <li><a>Visa processing</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Skilled</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Unskilled</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Sponsored</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Non sponsored</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Visa processing</a></li>
   </ul>
         {/* <a>Pages</a> */}
         </li>
         <li className="dropdown">
   <label tabIndex={0} className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>Test-Prep<RiArrowDropDownLine className='text-2xl text-[#94A0B9]' /></label>
   <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52">
-    <li><a>GRE</a></li>
-    <li><a>PTE</a></li>
-    <li><a>TOEEL</a></li>
-    <li><a>SAT</a></li>
-    <li><a>OET</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>GRE</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>PTE</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>TOEEL</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>SAT</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>OET</a></li>
   </ul>
         {/* <a>Pages</a> */}
         </li>
         <li className="dropdown hidden">
   <label tabIndex={0} className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>Skill up<RiArrowDropDownLine className='text-2xl text-[#94A0B9]' /></label>
   <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52">
-    <li><a>Item 1</a></li>
-    <li><a>Item 2</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Item 1</a></li>
+    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Item 2</a></li>
   </ul>
         {/* <a>Pages</a> */}
         </li>
