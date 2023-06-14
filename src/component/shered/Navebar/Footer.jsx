@@ -29,12 +29,12 @@ const Footer=()=>{
         <a className="link link-hover text-md leading-6 font-medium" style={{textDecoration:"none"}}>92 Bowery St., New York, NY 10013, USA</a> 
         </div>
         <div className="flex items-center hoverEffect">
-            <HiOutlinePaperAirplane className="text-4xl mr-2 setHover" />
+            <HiOutlinePaperAirplane className="text-xl mr-2 setHover" />
             <a className="link link-hover text-md leading-6 font-medium" style={{textDecoration:"none"}}>moveabroad@gmail.com</a> 
         </div>
         <div className="flex items-center hoverEffect">
             <BsTelephone className="text-4xl mr-2 setHover" />
-            <a className="link link-hover text-md leading-6 font-medium" style={{textDecoration:"none"}}>+88 0173367XXXX</a>
+            <a href="tel:+88 01733676666" className="link link-hover text-md leading-6 font-medium" style={{textDecoration:"none"}}>+88 0173367XXXX</a>
         </div>
     </div>
   </div>
