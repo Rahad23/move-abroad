@@ -7,7 +7,7 @@ import { Component } from 'react';
 import AdmitEdge from './AdmitEdge';
 import Degree from './Degree';
 import RequireAdmission from './RequireAdmission';
-import GreScroe from './GreScroe';
+import GreScore from './GreScore';
 import Success from './Success';
 
 export class FindProgram extends Component {
@@ -75,7 +75,7 @@ export class FindProgram extends Component {
         );
       case 4:
         return (
-          <GreScroe
+          <GreScore
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             values={values}

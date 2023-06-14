@@ -20,7 +20,7 @@ export class AdmitEdge extends Component {
               Best Path To Your Dream Admit - Granted in just 4 clicks!
             </p>
           </div>
-          <div className="lg:w-[1140px] w-[480px] lg:h-[330px] h-[420px] bg-[#D0D1D1] mx-auto rounded-sm mt-10 p-7 text-center">
+          <div className="lg:w-[1140px] w-[300px] lg:h-[330px] h-[520px] bg-[#D0D1D1] mx-auto rounded-sm mt-10 p-7 text-center">
             <div className="mt-5">
               <h3 className="text-[25px] text-black">
                 The path to a dream admit is different for different students.
@@ -32,7 +32,7 @@ export class AdmitEdge extends Component {
               </h2>
             </div>
             <div className="mt-12">
-              <button onClick={this.continue} className="btn w-[289px] h-[58px] bg-[#ED1C20] border-none rounded-sm hover:bg-[#d4171a] text-lg">
+              <button onClick={this.continue} className="btn lg:w-[289px] w-[230px] h-[58px] bg-[#ED1C20] border-none rounded-sm hover:bg-[#d4171a] text-lg">
                 FIND MY PROGRAM
               </button>
             </div>

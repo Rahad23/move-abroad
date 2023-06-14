@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 const CoupleSteps=()=>{
     AOS.init(400);
-    return <div className="mt-20 px-12" data-aos="zoom-in" data-aos-duration="1000">
+    return <div className="mt-20 lg:px-12 px-3" data-aos="zoom-in" data-aos-duration="1000">
         <div className="flex justify-center">
         <div className="bg-[#ffffff] shadow-md py-1 w-[250px] rounded-xl flex justify-between items-center px-5">
             <span className="p-[4px] bg-[#D82027] rounded-full"></span>
