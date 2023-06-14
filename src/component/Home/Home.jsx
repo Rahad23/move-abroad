@@ -1,4 +1,6 @@
 
+// import AdmitEdge from "../AdmitEdge/AdmitEdge";
+import FindProgram from "../AdmitEdge/FindProgram";
 import Banner from "../Bannar/Banner"
 import CoupleSteps from "../CoupleSteps/CoupleSteps";
 import HomeOffer from "../HomeOffer/HomeOffer";
@@ -15,6 +17,9 @@ const Home=()=>{
         </div>
         <div>
             <ScrollSlider />
+        </div>
+        <div>
+            <FindProgram />
         </div>
     </div>
 }

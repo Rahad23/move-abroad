@@ -1,0 +1,9 @@
+.bgImg-edge{
+    background-image: url("../../assets/web-img/rs.jpg");
+    background-repeat: repeat;
+    background-position: center;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -2;
+}
