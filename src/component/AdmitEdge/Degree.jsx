@@ -27,7 +27,7 @@ export class Degree extends Component {
               Best Path To Your Dream Admit - Granted in just 4 clicks!
             </p>
           </div>
-          <div className="lg:w-[1140px] w-[300px] lg:h-[330px] h-[520px] bg-[#D0D1D1] mx-auto rounded-sm mt-10 p-7 text-center">
+          <div className="lg:w-[1140px] w-[330px] py-9 bg-[#D0D1D1] mx-auto rounded-sm mt-10 px-7 text-center">
             <div className="mt-5">
               <h3 className="text-[25px] text-black">
               Which degree are you planning to pursue ?
@@ -35,15 +35,15 @@ export class Degree extends Component {
               <div className="flex justify-center items-center mt-16 gap-x-11">
               <div className="flex items-center">
                     <label className="label cursor-pointer">
-                    <input type="radio" name="radio-10" className="radio checked:bg-blue-500" />
-                    <span className="label-text uppercase ml-2 text-xl">ms</span> 
+                    <input type="radio" name="radio-10" className="radio checked:bg-blue-500 bg-[#ddd]" />
+                    <span className="label-text uppercase ml-2 text-xl text-gray-950">ms</span> 
                 </label>
 
                     </div>
                     <div className="flex items-center">
                     <label className="label cursor-pointer">
-                    <input type="radio" name="radio-10" className="radio checked:bg-blue-500" />
-                    <span className="label-text capitalize ml-2 text-xl">php</span> 
+                    <input type="radio" name="radio-10" className="radio checked:bg-blue-500 bg-[#ddd]" />
+                    <span className="label-text capitalize ml-2 text-xl text-gray-950">php</span> 
                 </label>
 
                     </div>

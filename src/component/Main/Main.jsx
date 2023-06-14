@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom"
 import Navebar from "../shered/Navebar/Navebar";
-import Footer from "../shered/Navebar/Footer";
+import Footer from "../shered/Footer/Footer";
+
+
 
 const Main=()=>{
     return <div>

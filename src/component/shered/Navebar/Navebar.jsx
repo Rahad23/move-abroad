@@ -7,7 +7,7 @@ import { RxCross2 } from "react-icons/rx";
 
 import { Link } from 'react-router-dom';
 import NavebarSearch from './NavebarSearch';
-import "./Footer.css";
+import "../Footer/Footer.css";
 const Navebar= () => {
 
     const [icon, setIcon]=useState(false);

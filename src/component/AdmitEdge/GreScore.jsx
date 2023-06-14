@@ -24,7 +24,7 @@ export class GreScore extends Component {
               Best Path To Your Dream Admit - Granted in just 4 clicks!
             </p>
           </div>
-          <div className="lg:w-[1140px] w-[300px] lg:h-[330px] h-[540px] bg-[#D0D1D1] mx-auto rounded-sm mt-10 p-7 text-center">
+          <div className="lg:w-[1140px] w-[330px] py-9 bg-[#D0D1D1] mx-auto rounded-sm mt-10 px-7 text-center">
             <div className="mt-5">
               <h3 className="text-[25px] text-black">
               What is your current or expected GRE score?
@@ -32,20 +32,20 @@ export class GreScore extends Component {
               <div className="lg:flex grid grid-cols-1 justify-center items-center mt-12 px-10 lg:gap-x-11 gap-y-3">
               <div className="flex items-center">
                     <label className="label cursor-pointer">
-                    <input type="radio" name="radio-10" className="radio checked:bg-blue-500" />
-                    <span className="label-text uppercase ml-2 text-xl">{"<300"}</span> 
+                    <input type="radio" name="radio-10" className="radio checked:bg-blue-500 bg-[#ddd]" />
+                    <span className="label-text uppercase ml-2 text-xl text-gray-950">{"<300"}</span> 
                 </label>
             </div>
                     <div className="flex items-center">
                     <label className="label cursor-pointer">
-                    <input type="radio" name="radio-10" className="radio checked:bg-blue-500" />
-                    <span className="label-text capitalize ml-2 text-xl">{"300-315"}</span> 
+                    <input type="radio" name="radio-10" className="radio checked:bg-blue-500 bg-[#ddd]" />
+                    <span className="label-text capitalize ml-2 text-xl text-gray-950">{"300-315"}</span> 
                 </label>
                     </div>
                     <div className="flex items-center">
                     <label className="label cursor-pointer">
-                    <input type="radio" name="radio-10" className="radio checked:bg-blue-500" />
-                    <span className="label-text capitalize ml-2 text-xl">{"315-340"}</span> 
+                    <input type="radio" name="radio-10" className="radio checked:bg-blue-500 bg-[#ddd]" />
+                    <span className="label-text capitalize ml-2 text-xl text-gray-950">{"315-340"}</span> 
                 </label>
 
                     </div>

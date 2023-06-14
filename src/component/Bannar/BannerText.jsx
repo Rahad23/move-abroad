@@ -12,7 +12,7 @@ const BannerText=()=>{
     <input type="email" placeholder="Type here" className="input input-bordered w-full max-w-xs relative pl-9 h-12 bg-white" required />
     <button className="btn btn-active bg-[#274396] ml-1 lg:ml-3 hover:bg-[#D82027] border-none ">Book now</button>
     </div>
-    <button className="absolute p-2 mr-[312px]">
+    <button className="absolute p-2 lg:mr-[312px] mr-[290px]">
     <AiOutlineMail className="text-2xl" />
     </button>
     </div>
