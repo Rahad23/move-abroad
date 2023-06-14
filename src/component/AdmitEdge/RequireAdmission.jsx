@@ -24,12 +24,12 @@ export class RequireAdmission extends Component {
               Best Path To Your Dream Admit - Granted in just 4 clicks!
             </p>
           </div>
-          <div className="w-[1140px] h-[330px] bg-[#D0D1D1] mx-auto rounded-sm mt-10 p-7 text-center">
+          <div className="lg:w-[1140px] w-[480px] lg:h-[330px] h-[490px] bg-[#D0D1D1] mx-auto rounded-sm mt-10 p-7 text-center">
             <div className="mt-5">
               <h3 className="text-[25px] text-black">
               What kind of assistance would you require for admissions?
               </h3>
-              <div className="grid grid-cols-3 justify-center items-center mt-12 gap-x-11 px-10">
+              <div className="grid lg:grid-cols-3 grid-cols-2 justify-center items-center mt-12 gap-x-11 lg:px-10 px-5">
               <div className="flex items-center">
                     <label className="label cursor-pointer">
                     <input type="radio" name="radio-10" className="radio checked:bg-blue-500" />

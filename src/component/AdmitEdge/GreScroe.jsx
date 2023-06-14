@@ -24,7 +24,7 @@ export class GreScroe extends Component {
               Best Path To Your Dream Admit - Granted in just 4 clicks!
             </p>
           </div>
-          <div className="w-[1140px] h-[330px] bg-[#D0D1D1] mx-auto rounded-sm mt-10 p-7 text-center">
+          <div className="lg:w-[1140px] w-[480px] lg:h-[330px] h-[420px] bg-[#D0D1D1] mx-auto rounded-sm mt-10 p-7 text-center">
             <div className="mt-5">
               <h3 className="text-[25px] text-black">
               What is your current or expected GRE score?
