@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 const Advertisement=()=>{
     AOS.init(400);
-    return <div className="px-12">
+    return <div className="lg:px-12 px-5">
         <div className="lg:h-[274px] bg-white lg:-mt-24 mt-10 rounded-2xl mx-auto lg:grid p-6 lg:border-r-4 border-r-0 flex flex-col lg:flex-row h-full border-[#274396] lg:shadow-lg shadow-xl" style={{gridTemplateColumns:"4fr 2fr"}} >
         <div className="lg:py-10 py-3 lg:px-7 px-2">
             <h1 className="text-3xl text-gray-950 font-medium">The Best New Way to Learn a Language</h1>

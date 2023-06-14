@@ -77,7 +77,7 @@ const ScrollSlider=()=>{
         }
     ]
 
-    return <div className="mt-10">
+    return <div className="lg:mt-10 mt-4">
          <Swiper
          {...swiperOptions}
         ref={swiperRef}
