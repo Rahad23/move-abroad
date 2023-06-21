@@ -12,7 +12,7 @@ import './ScrollSlider.css';
 import { useRef, useState } from 'react';
 //set swiperSlide change speed
 const swiperOptions = {
-    speed: 2000, // Adjust the speed value as needed
+    speed: 1000, // Adjust the speed value as needed
     // Other Swiper options...
   };
 // import required modules

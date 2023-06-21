@@ -9,7 +9,7 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 const Footer=()=>{
     return <footer className="bg-[#1E2845]">
-  <div className="footer grid lg:grid-cols-4 grid-cols-1 lg:h-[513px] h-[1050px] gap-x-3 p-10 text-white">
+  <div className="footer grid lg:grid-cols-4 grid-cols-1 lg:h-[513px] h-[1050px] py-7 lg:py-0 gap-x-3 p-10 text-white">
   <div className="h-[128px] px-2">
     <span className="text-lg font-semibold">
         <img className="w-32" src={logo} alt="" />

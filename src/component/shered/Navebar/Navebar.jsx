@@ -45,11 +45,11 @@ return (
     <li className="dropdown">
   <label tabIndex={0} className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>Study Abroad<RiArrowDropDownLine className='text-2xl text-[#94A0B9]' /></label>
   <ul tabIndex={0} className="p-2 dropdown-content shadow hover:bg-white text-gray-950 focus:text-gray-950 bg-white w-52">
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Undergraduate</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Masters</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Phd</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Diploma</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Evaluate your profile</a></li>
+    <li className="border-animate"><Link to={"/undergraduate"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Undergraduate</Link></li>
+    <li className="border-animate"><Link to={"/masters"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Masters</Link></li>
+    <li className="border-animate"><Link to={"/phd"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Phd</Link></li>
+    <li className="border-animate"><Link to={"/diploma"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Diploma</Link></li>
+    <li className="border-animate"><Link to={"/evaluate-your-profile"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Evaluate your profile</Link></li>
   </ul>
         {/* <a>Pages</a> */}
         </li>
@@ -57,22 +57,22 @@ return (
       <li className="dropdown">
   <label tabIndex={0} className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>Jobs in Abroad<RiArrowDropDownLine className='text-2xl text-[#94A0B9]' /></label>
   <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52">
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Skilled</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Unskilled</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Sponsored</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Non sponsored</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>Visa processing</a></li>
+    <li className="border-animate"><Link to={"/skilled"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Skilled</Link></li>
+    <li className="border-animate"><Link to={"/unskilled"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Unskilled</Link></li>
+    <li className="border-animate"><Link to={"/sponsored"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Sponsored</Link></li>
+    <li className="border-animate"><Link to={"/non_sponsored"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Non sponsored</Link></li>
+    <li className="border-animate"><Link to={"/visa_processing"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Visa processing</Link></li>
   </ul>
         {/* <a>Pages</a> */}
         </li>
         <li className="dropdown">
   <label tabIndex={0} className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>Test-Prep<RiArrowDropDownLine className='text-2xl text-[#94A0B9]' /></label>
   <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52">
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>GRE</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>PTE</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>TOEEL</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>SAT</a></li>
-    <li className="border-animate"><a className='hover:bg-white focus:text-gray-950 text-base font-medium'>OET</a></li>
+    <li className="border-animate"><Link to={"/GRE"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>GRE</Link></li>
+    <li className="border-animate"><Link to={"/PTE"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>PTE</Link></li>
+    <li className="border-animate"><Link to={"/TOEEL"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>TOEEL</Link></li>
+    <li className="border-animate"><Link to={"/SAT"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>SAT</Link></li>
+    <li className="border-animate"><Link to={"/OTE"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>OET</Link></li>
   </ul>
         {/* <a>Pages</a> */}
         </li>
@@ -85,14 +85,22 @@ return (
         {/* <a>Pages</a> */}
         </li>
         <li>
-  <label className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>Free Resource</label>
+  <label className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>
+    <Link to={"/free_resource"}>
+     Free Resource
+    </Link>
+    </label>
         {/* <a>Pages</a> */}
         </li>
         <li>
   <label className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white hidden'>Wall of tame</label>
         </li>
         <li>
-  <label  className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>Blog</label>
+  <label  className='text-xl font-semibold text-gray-900 hover:bg-white focus:bg-white'>
+   <Link to={"/blog"}>
+      Blog
+   </Link>
+    </label>
         </li>
     </ul>
   </div>
