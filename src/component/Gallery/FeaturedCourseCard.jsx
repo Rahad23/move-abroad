@@ -92,7 +92,7 @@ const FeaturedCourseCard=()=>{
             students: 1
         },
     ]
-    return <div className="lg:px-7 px-4 mb-9">
+    return <div className="lg:px-7 px-4 mb-9 bg-white">
         <div className="mt-20">
             <div className="flex justify-between lg:flex-row flex-col items-center">
                 <h1 className="text-3xl font-medium text-gray-950 uppercase">University list</h1>
@@ -106,7 +106,7 @@ const FeaturedCourseCard=()=>{
         <div className="grid lg:grid-cols-4 grid-cols-1 mt-10 gap-y-7">
             {
             feauturedCourse.map(data=>
-            <div className="card w-64 bg-base-100 shadow-xl rounded-lg cursor-pointer mx-auto" key={data.id}>
+            <div className="card w-64 bg-base-100 shadow-xl rounded-lg cursor-pointer mx-auto bg-white" key={data.id}>
             <figure className="">
               <img src={data.img} alt="Shoes" className="rounded-xl" />
             </figure>

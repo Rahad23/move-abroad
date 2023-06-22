@@ -2,24 +2,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../component/Main/Main";
 import Home from "../component/Home/Home";
-// import Undergraduate from "../component/Undergraduate/Undergraduate";
-// import Masters from "../component/Masters/Masters";
-// import Phd from "../component/Phd/Phd";
-// import Diploma from "../component/Diploma/Diploma";
-// import Evaluate_your_profile from "../component/Evaluate_your_profile/Evaluate_your_profile";
-// import Skilled from "../component/Skilled/Skilled";
-// import Unskilled from "../component/Unskilled/Unskilled";
-// import Sponsored from "../component/Sponsored/Sponsored";
-// import Non_sponsored from "../component/Non_sponsored/Non_sponsored";
-// import Visa_processing from "../component/Visa_processing/Visa_processing";
-// import Gre from "../component/GRE/Gre";
-// import Pte from "../component/PTE/Pte";
-// import Toeel from "../component/TOEEL/Toeel";
-// import SAT from "../component/SAT/SAT";
-// import Ote from "../component/OTE/OTE";
-// import Free_resource from "../component/Free_resource/Free_resource";
-// import Blog from "../component/Blog/Blog";
 import Gallery from "../component/Gallery/Gallery";
+import Free_resource from "../component/Free_resource/Free_resource";
+import ErrorPage from "../component/ErrorPage/ErrorPage";
+import LiveOnlineSeminar from "../component/Free_resource/Free_course_inner_page/LiveOnlineSeminar";
+import E_Books from "../component/Free_resource/Free_course_inner_page/E_Books";
+import Gre_Quiz from "../component/Free_resource/Free_course_inner_page/Gre_Quiz";
+import Videos from "../component/Free_resource/Free_course_inner_page/Videos";
 
 
 
@@ -27,6 +16,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <Main />,
+      errorElement: <ErrorPage />,
       children:[
       {
         path:"/",
@@ -93,15 +83,38 @@ const router = createBrowserRouter([
         element: <Gallery />
       },
       {
-        path: "/free_resource",
-        element: <Gallery />
-      },
-      {
         path: "/blog",
         element: <Gallery />
       },
+      {
+        path: "/free_resource",
+        element: <Free_resource />,
+        children:[
+          {
+            path:'live_online_seminar',
+            element: <LiveOnlineSeminar />
+          },
+          {
+            path:'live_online_seminar',
+            element: <LiveOnlineSeminar />
+          },
+          {
+            path:"e_books",
+            element: <E_Books />
+          },
+          {
+            path: "gre_quiz",
+            element:<Gre_Quiz />
+          },
+          {
+            path: "videos",
+            element: <Videos />
+          }
+        ]
+      }
+      
       ]
-    },
+    }
   ]);
 
 export default router;

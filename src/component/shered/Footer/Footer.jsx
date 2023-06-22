@@ -66,7 +66,7 @@ const Footer=()=>{
         <h5 className="text-white text-base">Privacy Environment Policy</h5>
    </div>
    <div>
-        <p className="text-[#A9B7DB] text-base">Copyright © 2023 Unicoach by It Bangla LTD. All Rights Reserved.
+        <p className="text-[#A9B7DB] text-base">Copyright © 2023 Unicoach by IT Bangla LTD. All Rights Reserved.
 </p>
    </div>
    </div>
