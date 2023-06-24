@@ -13,9 +13,9 @@ const Free_resource=()=>{
         <Free_resource_banner />
         </div>
         <div className="bg-white">
-
                 {
-                    thirdUrl ? <div className="mx-auto"><Outlet /></div> : <LiveOnlineSeminar />
+                    thirdUrl ? <div className="mx-auto"><Outlet /></div> : 
+                    <div className="mx-auto"><LiveOnlineSeminar /></div>
                 }
         </div>
     </div>

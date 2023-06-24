@@ -90,7 +90,7 @@ const Videos=()=>{
         },
     ]
     return (
-        <div className="mt-16 grid grid-cols-3 gap-y-9 px-10">
+        <div className="mt-16 grid grid-cols-3 gap-y-9 px-10 mb-16">
             {
                 videoThum.map(data=>
                     <div className="card w-[350px] cursor-pointer bg-white shadow-md mx-auto" key={data.id}>

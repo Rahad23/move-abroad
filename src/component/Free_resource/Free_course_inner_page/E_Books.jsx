@@ -184,7 +184,7 @@ const E_Books=()=>{
         },
     ]
     return (
-        <div className="grid grid-cols-3 gap-y-7 my-14">
+        <div className="grid lg:grid-cols-3 grid-cols-1 mx-auto gap-y-7 my-14">
             {
                 booksData.map(data=>
                     <div className="card w-[350px] rounded-none bg-white shadow-xl mx-auto cursor-pointer" key={data.id}>

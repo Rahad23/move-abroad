@@ -40,7 +40,7 @@ const Free_resource_navebar=()=>{
 
     return (
         <div className="px-5">
-            <ul className="flex justify-center items-center gap-x-1">
+            <ul className="flex lg:flex-row flex-col lg:gap-y-0 gap-y-2 justify-center items-center gap-x-1">
               {
                 naveData.map(data=>
                     <Link to={`${data.link}`} key={data.id}><li className={usePath === data.link ? "flex items-center justify-center w-[294px] h-[50px] bg-[#ED1C20] rounded-sm text-white":"flex items-center justify-center w-[294px] h-[50px] bg-[#ffffff] rounded-sm"}>

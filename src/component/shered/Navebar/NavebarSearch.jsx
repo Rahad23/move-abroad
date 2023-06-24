@@ -9,7 +9,7 @@ const NavebarSearch= () => {
     <div>
     <input type="text" placeholder="Type here" className="input bg-white input-bordered w-[279px] relative pr-16" />
     <button className="btn bg-[#274396] hover:bg-[#D82027] border-none absolute ml-[-15%] rounded-[5px]">
-        <BsSearch className="text-xl" />
+        <BsSearch className="text-xl text-white" />
     </button>
     </div>
     </div>
