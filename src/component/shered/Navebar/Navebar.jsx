@@ -73,12 +73,12 @@ return (
         </ul>
         </li>
         <li>
-        <label className='font-semibold text-gray-900 hover:bg-white focus:bg-white'>
+        <label className=' text-gray-900 hover:bg-white focus:bg-white'>
         <Link to={"/free_resource"}>Free Resource</Link>
     </label>
         </li>
         <li>
-        <label  className='font-semibold text-gray-900 hover:bg-white focus:bg-white'>
+        <label  className=' text-gray-900 hover:bg-white focus:bg-white'>
    <Link to={"/blog"}>
       Blog
    </Link>
