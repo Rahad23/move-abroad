@@ -1,4 +1,5 @@
 import cardImg from "../../../assets/web-img/card2l_4.jpg";
+import "./Free_course_inner_page.css";
 const E_Books=()=>{
     const booksData=[
         {
@@ -183,13 +184,18 @@ const E_Books=()=>{
         },
     ]
     return (
-        <div className="grid grid-cols-3 gap-y-7 mt-14">
+        <div className="grid grid-cols-3 gap-y-7 my-14">
             {
                 booksData.map(data=>
-                    <div className="card w-[350px] rounded-none bg-white shadow-xl mx-auto" key={data.id}>
-                    <figure><img src={data.img} alt="Shoes" /></figure>
+                    <div className="card w-[350px] rounded-none bg-white shadow-xl mx-auto cursor-pointer" key={data.id}>
+                   <div className="container">
+                   <figure><img className="image" src={data.img} alt="Shoes" /></figure>
+                    <div className="middle w-full">
+                        <h1 className="text text-xl font-semibold">Get the study plan of a 330 scorer</h1>
+                    </div>
+                   </div>
                     <div className="card-body px-3 py-6">
-                      <h2 className="card-title text-gray-950 text-[20px] leading-8">
+                      <h2 className="card-title text-gray-950 text-lg leading-7 font-serif">
                        {data.title}
                       </h2>
                       <div className="card-actions justify-end mt-2">

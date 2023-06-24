@@ -5,10 +5,10 @@ import Home from "../component/Home/Home";
 import Gallery from "../component/Gallery/Gallery";
 import Free_resource from "../component/Free_resource/Free_resource";
 import ErrorPage from "../component/ErrorPage/ErrorPage";
-import LiveOnlineSeminar from "../component/Free_resource/Free_course_inner_page/LiveOnlineSeminar";
 import E_Books from "../component/Free_resource/Free_course_inner_page/E_Books";
 import Gre_Quiz from "../component/Free_resource/Free_course_inner_page/Gre_Quiz";
 import Videos from "../component/Free_resource/Free_course_inner_page/Videos";
+import LiveOnlineSeminar from "../component/Free_resource/Free_course_inner_page/LiveOlineSeminar/LiveOnlineSeminar";
 
 
 
@@ -90,10 +90,6 @@ const router = createBrowserRouter([
         path: "/free_resource",
         element: <Free_resource />,
         children:[
-          {
-            path:'live_online_seminar',
-            element: <LiveOnlineSeminar />
-          },
           {
             path:'live_online_seminar',
             element: <LiveOnlineSeminar />

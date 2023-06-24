@@ -8,7 +8,8 @@ const Free_resource_navebar=()=>{
     // const [url, setUrl]=useState("")
     // console.log(url)
     const currentUrl = useLocation();
-    const myPath = currentUrl.pathname.split("/")[2];
+    const url = currentUrl.pathname.split("/")[2];
+    const usePath = url ? url : currentUrl.pathname.split("/")[1]="live_online_seminar";
    
     const naveData=[
         {
@@ -42,9 +43,9 @@ const Free_resource_navebar=()=>{
             <ul className="flex justify-center items-center gap-x-1">
               {
                 naveData.map(data=>
-                    <Link to={`${data.link}`} key={data.id}><li className={myPath === data.link ? "flex items-center justify-center w-[294px] h-[50px] bg-[#ED1C20] rounded-sm text-white":"flex items-center justify-center w-[294px] h-[50px] bg-[#ffffff] rounded-sm"}>
+                    <Link to={`${data.link}`} key={data.id}><li className={usePath === data.link ? "flex items-center justify-center w-[294px] h-[50px] bg-[#ED1C20] rounded-sm text-white":"flex items-center justify-center w-[294px] h-[50px] bg-[#ffffff] rounded-sm"}>
                     {data.icon}
-                    <span className={myPath === data.link ? "text-lg text-white":"text-lg text-gray-950"}>{data.text}</span>
+                    <span className={usePath === data.link ? "text-lg text-white":"text-lg text-gray-950"}>{data.text}</span>
                 </li>
                 </Link>
                 )

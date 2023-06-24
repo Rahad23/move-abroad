@@ -1,8 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Free_resource_banner from "./Free_resource_banner";
 import Free_resource_navebar from "./Free_resource_navebar";
+import LiveOnlineSeminar from "./Free_course_inner_page/LiveOlineSeminar/LiveOnlineSeminar";
+
 
 const Free_resource=()=>{
+    const url = useLocation();
+    const thirdUrl= url.pathname.split("/")[2];
     return <>
     <div className="bg-white">
         <div>
@@ -10,9 +14,10 @@ const Free_resource=()=>{
         </div>
         <div className="bg-white">
             <Free_resource_navebar />
-            <div className="px-5 mx-auto">
-                <Outlet />
-            </div>
+
+                {
+                    thirdUrl ? <div className="mx-auto"><Outlet /></div> : <LiveOnlineSeminar />
+                }
         </div>
     </div>
     </>

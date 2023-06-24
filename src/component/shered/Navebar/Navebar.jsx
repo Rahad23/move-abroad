@@ -122,7 +122,7 @@ return (
     }
   
   </div>
-    <a className="btn bg-[#D82027] border-none hover:bg-[#274396] w-[152px] h-[56px] py-5 px-[37px] text-sm">subscribe</a>
+    <a className="btn bg-[#D82027] border-none hover:bg-[#274396] w-[152px] h-[56px] py-5 px-[37px] text-sm text-white">subscribe</a>
   </div>
 </div>
     );
