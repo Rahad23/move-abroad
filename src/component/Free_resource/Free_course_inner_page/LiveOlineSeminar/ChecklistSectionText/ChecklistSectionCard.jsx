@@ -59,7 +59,7 @@ const ChecklistSectionCard=()=>{
        <div className="grid gap-y-9 mt-14">
         {
             checkListJson.map(data=>
-                <div className="card w-full rounded-none bg-white grid" data-aos="fade-up-left" data-aos-duration="1000" style={{gridTemplateColumns:"55px 4fr"}} key={data.id}>
+                <div className="card w-full rounded-none bg-white grid" data-aos="fade-up-left" data-aos-duration="500" style={{gridTemplateColumns:"55px 4fr"}} key={data.id}>
         {data.icon}
          <div className="px-6">
      <h2 className="card-title text-3xl font-medium text-[#7B7B7B]">{data.title}</h2>
