@@ -57,19 +57,19 @@ return (
             <li className="border-animate">
               <Link to={"/evaluate-your-profile"} className='hover:bg-white focus:text-gray-950 text-base font-normal flex flex-wrap'>Evaluate your profile</Link>
               </li>
-              <li className="border-animate"><Link to={"/sponsored"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Sponsored</Link></li>
-            <li className="border-animate"><Link to={"/non_sponsored"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Non sponsored</Link></li>
-            <li className="border-animate"><Link to={"/visa_processing"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>Visa processing</Link></li>
+              <li className="border-animate"><Link to={"/sponsored"} className='hover:bg-white focus:text-gray-950 text-base font-normal'>Sponsored</Link></li>
+            <li className="border-animate"><Link to={"/non_sponsored"} className='hover:bg-white focus:text-gray-950 text-base font-normal'>Non sponsored</Link></li>
+            <li className="border-animate"><Link to={"/visa_processing"} className='hover:bg-white focus:text-gray-950 text-base font-normal'>Visa processing</Link></li>
         </ul>
         </li>
         <li className="dropdown dropdown-right border-animate">
-         <label tabIndex={0} className='flex justify-between'>Test-Prep <FaAngleRight /></label>
+         <label tabIndex={0} className='flex justify-between'>Test-Prep<FaAngleRight /></label>
          <ul tabIndex={0} className="dropdown-content z-[1] menu p-0 shadow bg-white rounded-box w-[170px]">
          <li className="border-animate"><Link to={"/GRE"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>GRE</Link></li>
-    <li className="border-animate"><Link to={"/PTE"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>PTE</Link></li>
-    <li className="border-animate"><Link to={"/TOEEL"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>TOEEL</Link></li>
-    <li className="border-animate"><Link to={"/SAT"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>SAT</Link></li>
-    <li className="border-animate"><Link to={"/OTE"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>OET</Link></li>
+    <li className="border-animate"><Link to={"/PTE"} className='hover:bg-white focus:text-gray-950 text-base font-normal'>PTE</Link></li>
+    <li className="border-animate"><Link to={"/TOEEL"} className='hover:bg-white focus:text-gray-950 text-base font-normal'>TOEEL</Link></li>
+    <li className="border-animate"><Link to={"/SAT"} className='hover:bg-white focus:text-gray-950 text-base font-normal'>SAT</Link></li>
+    <li className="border-animate"><Link to={"/OTE"} className='hover:bg-white focus:text-gray-950 text-base font-normal'>OET</Link></li>
         </ul>
         </li>
         <li className='border-animate'>
