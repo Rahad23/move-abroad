@@ -1,4 +1,4 @@
-import cardImg from "../../../assets/web-img/card2l_4.jpg";
+import cardImg from "../../../assets/web-img/book1.jpg";
 import "./Free_course_inner_page.css";
 const E_Books=()=>{
     const booksData=[
