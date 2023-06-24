@@ -13,7 +13,6 @@ const Free_resource=()=>{
         <Free_resource_banner />
         </div>
         <div className="bg-white">
-            <Free_resource_navebar />
 
                 {
                     thirdUrl ? <div className="mx-auto"><Outlet /></div> : <LiveOnlineSeminar />

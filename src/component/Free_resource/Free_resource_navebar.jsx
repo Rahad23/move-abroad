@@ -39,7 +39,7 @@ const Free_resource_navebar=()=>{
     ]
 
     return (
-        <div className="px-5 bg-[#535655] py-1">
+        <div className="px-5">
             <ul className="flex justify-center items-center gap-x-1">
               {
                 naveData.map(data=>

@@ -6,9 +6,9 @@ import Gallery from "../component/Gallery/Gallery";
 import Free_resource from "../component/Free_resource/Free_resource";
 import ErrorPage from "../component/ErrorPage/ErrorPage";
 import E_Books from "../component/Free_resource/Free_course_inner_page/E_Books";
-import Gre_Quiz from "../component/Free_resource/Free_course_inner_page/Gre_Quiz";
-import Videos from "../component/Free_resource/Free_course_inner_page/Videos";
 import LiveOnlineSeminar from "../component/Free_resource/Free_course_inner_page/LiveOlineSeminar/LiveOnlineSeminar";
+import Gre_Quiz from "../component/Free_resource/Free_course_inner_page/Gre_Quiz/Gre_Quiz";
+import Videos from "../component/Free_resource/Free_course_inner_page/Videos/Videos";
 
 
 
