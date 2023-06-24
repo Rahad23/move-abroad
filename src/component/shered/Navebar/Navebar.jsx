@@ -72,12 +72,12 @@ return (
     <li className="border-animate"><Link to={"/OTE"} className='hover:bg-white focus:text-gray-950 text-base font-medium'>OET</Link></li>
         </ul>
         </li>
-        <li>
+        <li className='border-animate'>
         <label className=' text-gray-900 hover:bg-white focus:bg-white'>
         <Link to={"/free_resource"}>Free Resource</Link>
     </label>
         </li>
-        <li>
+        <li className='border-animate'>
         <label  className=' text-gray-900 hover:bg-white focus:bg-white'>
    <Link to={"/blog"}>
       Blog
