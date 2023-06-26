@@ -1,4 +1,4 @@
-import { Component, useState } from "react";
+import { Component } from "react";
 // import NextPreviusButton from "./NextPreviusButton";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 

@@ -35,14 +35,12 @@ export class RequireAdmission extends Component {
                     <input type="radio" name="radio-10" className="radio checked:bg-blue-500 bg-[#ddd]" />
                     <span className="label-text capitalize ml-2 text-xl text-gray-950">Complete guidance</span> 
                 </label>
-
                     </div>
                     <div className="flex items-center">
                     <label className="label cursor-pointer">
                     <input type="radio" name="radio-10" className="radio checked:bg-blue-500 bg-[#ddd]" />
                     <span className="label-text capitalize ml-2 text-xl text-gray-950">University selection</span> 
                 </label>
-
                     </div>
                     <div className="flex items-center">
                     <label className="label cursor-pointer">

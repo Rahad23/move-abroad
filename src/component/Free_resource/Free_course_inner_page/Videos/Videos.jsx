@@ -92,14 +92,14 @@ const Videos=()=>{
     return (
         <div className="mt-16 grid grid-cols-3 gap-y-9 px-10 mb-16">
             {
-                videoThum.map(data=>
-                    <div className="card w-[350px] cursor-pointer bg-white shadow-md mx-auto" key={data.id}>
-  <figure><img src={data.img} alt="Shoes" /></figure>
-  <div className="card-body px-4">
-    <h2 className="text-lg font-medium text-gray-950">{data.title}</h2>
-  </div>
-</div>
-                    )
+        videoThum.map(data=>
+            <div className="card w-[350px] cursor-pointer bg-white shadow-md mx-auto" key={data.id}>
+                    <figure><img src={data.img} alt="Shoes" /></figure>
+                    <div className="card-body px-4">
+                        <h2 className="text-lg font-medium text-gray-950">{data.title}</h2>
+                    </div>
+            </div>
+      )
             }
         </div>
     )

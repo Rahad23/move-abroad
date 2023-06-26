@@ -16,7 +16,7 @@ const Navebar= () => {
     }
 
 return (
-<div className="navbar bg-white px-[20px] mx-auto justify-between sticky -top-1 z-50">
+<div className="navbar bg-white lg:px-[20px] px-1 mx-auto justify-between sticky -top-1 z-50">
    {
     icon 
     &&
