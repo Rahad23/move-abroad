@@ -9,6 +9,10 @@ import E_Books from "../component/Free_resource/Free_course_inner_page/E_Books";
 import LiveOnlineSeminar from "../component/Free_resource/Free_course_inner_page/LiveOlineSeminar/LiveOnlineSeminar";
 import Gre_Quiz from "../component/Free_resource/Free_course_inner_page/Gre_Quiz/Gre_Quiz";
 import Videos from "../component/Free_resource/Free_course_inner_page/Videos/Videos";
+import Login from "../component/Login_Registration/Login";
+import Registration from "../component/Login_Registration/Registration";
+import AdminHome from "../admin_dashboard/component/adminHome/adminHome";
+import AdminEBooks from "../admin_dashboard/component/adminEBooks/AdminEBooks";
 
 
 
@@ -109,6 +113,24 @@ const router = createBrowserRouter([
         ]
       }
       
+      ]
+    },
+    {
+      path: "/login",
+      element: <Login />
+    },
+    {
+      path: "/sign_up",
+      element: <Registration />
+    },
+    {
+      path: "/admin",
+      element: <AdminHome />,
+      children:[
+        {
+          path: "/admin/adminEbooks",
+          element: <AdminEBooks />
+        }
       ]
     }
   ]);

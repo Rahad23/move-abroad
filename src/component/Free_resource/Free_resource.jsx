@@ -1,6 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Free_resource_banner from "./Free_resource_banner";
-import Free_resource_navebar from "./Free_resource_navebar";
 import LiveOnlineSeminar from "./Free_course_inner_page/LiveOlineSeminar/LiveOnlineSeminar";
 
 
