@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Free_course_inner_page.css";
 import axios from "axios";
-import cardImg from "../../../assets/web-img/book1.jpg";
 
 import { Link } from "react-router-dom";
 import eBookUrl from "../../../api/bootApi";
@@ -28,9 +27,10 @@ const E_Books=()=>{
         <div className="grid lg:grid-cols-3 grid-cols-1 mx-auto gap-y-7 my-14">
             {
                 bookData.map(data=>
-                    <div className="card w-[350px] rounded-none bg-white shadow-xl mx-auto cursor-pointer" key={data._id}>
+                   <Link to={data._id} key={data._id}>
+                    <div className="card w-[350px] rounded-none bg-white shadow-xl mx-auto cursor-pointer">
                    <div className="container">
-                   <figure><img className="image" src={cardImg} alt="Shoes" /></figure>
+                   <figure><img className="image" src={"http://"+data?.imagePath} alt="Shoes" /></figure>
                     <div className="middle w-full">
                         <h1 className="text text-xl font-semibold">{data?.bookName}</h1>
                     </div>
@@ -46,6 +46,7 @@ const E_Books=()=>{
                       </div>
                     </div>
                   </div> 
+                   </Link>
                     )
             }
         </div>

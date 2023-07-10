@@ -11,8 +11,8 @@ import Gre_Quiz from "../component/Free_resource/Free_course_inner_page/Gre_Quiz
 import Videos from "../component/Free_resource/Free_course_inner_page/Videos/Videos";
 import Login from "../component/Login_Registration/Login";
 import Registration from "../component/Login_Registration/Registration";
-import AdminHome from "../admin_dashboard/component/adminHome/adminHome";
-import AdminEBooks from "../admin_dashboard/component/adminEBooks/AdminEBooks";
+import ReadBookPage from "../component/Free_resource/Free_course_inner_page/ReadBookPage/ReadBookPage";
+import axios from "axios";
 
 
 
@@ -109,6 +109,20 @@ const router = createBrowserRouter([
           {
             path: "videos",
             element: <Videos />
+          },
+          {
+            path: "e_books/:id",
+            element: <ReadBookPage />,
+            loader: async ({ params }) => {
+              try {
+                const response = await axios.get(`${import.meta.env.VITE_REACT_APP_URL}/ebook/${params.id}`);
+                return response.data;
+              } catch (error) {
+                console.error(error);
+                throw error;
+              }
+            }
+             
           }
         ]
       }
@@ -123,16 +137,6 @@ const router = createBrowserRouter([
       path: "/sign_up",
       element: <Registration />
     },
-    {
-      path: "/admin",
-      element: <AdminHome />,
-      children:[
-        {
-          path: "/admin/adminEbooks",
-          element: <AdminEBooks />
-        }
-      ]
-    }
   ]);
 
 export default router;
