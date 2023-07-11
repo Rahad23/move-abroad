@@ -9,6 +9,7 @@ import img7 from "../../assets/gallery/uni7.jpg";
 import img8 from "../../assets/gallery/uni8.jpg";
 import { CiClock2 } from "react-icons/ci";
 import { FaUniversity } from "react-icons/fa";
+import { parse } from "postcss";
 const FeaturedCourseCard=()=>{
     const feauturedCourse=[
         {
@@ -128,7 +129,7 @@ const FeaturedCourseCard=()=>{
                  <h2 className="card-title text-base text-left mt-2">{data.title}</h2>
                 </div>
                 <div className="text-left">
-                    <p>{data.description.length > 40 ?  data.description.slice(0, 50)+"..." : data.description}</p>
+                    {data.description.length > 40 ?  data.description.slice(0, 50)+"..." : data.description}
                     <div className="mt-3 flex justify-between items-center">
                         <div className="flex items-center justify-center">
                             <CiClock2 className="text-xl text-green-500 mr-1" />
