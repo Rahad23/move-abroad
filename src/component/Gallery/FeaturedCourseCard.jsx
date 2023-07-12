@@ -129,7 +129,7 @@ const FeaturedCourseCard=()=>{
                  <h2 className="card-title text-base text-left mt-2">{data.title}</h2>
                 </div>
                 <div className="text-left">
-                    {data.description.length > 40 ?  data.description.slice(0, 50)+"..." : data.description}
+                    {data.description?.replace(/<[^>]+>/g, "").length > 40 ?  data.description?.replace(/<[^>]+>/g, "").slice(0, 50)+"..." : data.description?.replace(/<[^>]+>/g, "")}
                     <div className="mt-3 flex justify-between items-center">
                         <div className="flex items-center justify-center">
                             <CiClock2 className="text-xl text-green-500 mr-1" />
