@@ -12,7 +12,8 @@ const ReadBookPage=()=>{
     </figure>
     <div className="card-body">
         <h2 className="card-title">{bookName}</h2>
-        <p>{description}</p>
+        <div dangerouslySetInnerHTML={{ __html: description }}>
+        </div>
         <div className="card-actions">
         <button className="btn btn-primary">Buy Now</button>
         </div>

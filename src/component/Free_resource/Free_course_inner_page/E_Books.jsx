@@ -36,8 +36,15 @@ const E_Books=()=>{
                     </div>
                    </div>
                     <div className="card-body px-3 py-6">
-                      <h2 className="card-title text-gray-950 text-lg leading-7 font-serif" title={data.description}>
-                       {data.description.length >= 60 ? data.description.slice(0, 59)+"..." : data.description}
+                      <h2 className="card-title text-gray-950 text-lg leading-7 font-serif" title={data.description
+                    }
+                    dangerouslySetInnerHTML={{
+                        __html:
+                          data.description?.replace(/<[^>]+>/g, "").length >= 50
+                            ? data.description?.replace(/<[^>]+>/g, "").slice(0, 55) + "..."
+                            : data.description?.replace(/<[^>]+>/g, "")
+                      }}
+                    >
                       </h2>
                       <div className="card-actions justify-end mt-2">
                         <Link to={`${data._id}`}>
