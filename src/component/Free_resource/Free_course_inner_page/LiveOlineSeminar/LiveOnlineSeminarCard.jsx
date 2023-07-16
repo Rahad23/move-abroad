@@ -6,7 +6,7 @@ const [liveSeminar, setLiveSeminar]=useState([]);
 
   axios.get(`${import.meta.env.VITE_REACT_APP_URL}/liveOnlineSeminar`)
   .then(response => {
-    console.log(response.data)
+    console.log(response.data);
     setLiveSeminar(response.data);
 })
 .catch(error => {
@@ -25,10 +25,10 @@ const [liveSeminar, setLiveSeminar]=useState([]);
       <div className="text-gray-950 flex justify-center">
         <div className="text-center">
             <h2 className="lg:text-2xl text-lg font-semibold text-[#FE0000]">{data?.date}</h2>
-            <h2 className="lg:text-3xl text-lg font-semibold text-[#FE0000]">{data?.moduleStartTime}</h2>
+            <h2 className="lg:text-3xl text-lg font-semibold text-[#FE0000]">{data?.classStartTime}</h2>
             <h3 className="mt-1 text-lg lg:text-xl font-semibold text-[#808280]">Webinar will start in:</h3>
             <div className="mt-2 flex justify-center items-center">
-                <CountDown  date={data?.registrationTiming} />
+                <CountDown  date={data?.countdown} />
             </div>
             <div className="mt-2">
                 <button className="btn bg-[#FE0000] text-lg lg:text-xl text-white border-none rounded-none w-[226px] h-[50px] lg:h-[58px] hover:bg-[#fc0c0c] capitalize">Register now</button>
