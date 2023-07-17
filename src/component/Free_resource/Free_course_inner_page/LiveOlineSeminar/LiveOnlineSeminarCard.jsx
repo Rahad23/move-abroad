@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import axios from "axios";
 import CountDown from "./CountDown";
 import { useState } from "react";
