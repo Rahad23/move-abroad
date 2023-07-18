@@ -13,6 +13,7 @@ import Login from "../component/Login_Registration/Login";
 import Registration from "../component/Login_Registration/Registration";
 import ReadBookPage from "../component/Free_resource/Free_course_inner_page/ReadBookPage/ReadBookPage";
 import axios from "axios";
+import UniversityRegistration from "../component/UniversityRegistration/UniversityRegistration";
 
 
 
@@ -96,7 +97,21 @@ const router = createBrowserRouter([
         children:[
           {
             path:'live_online_seminar',
-            element: <LiveOnlineSeminar />
+            element: <LiveOnlineSeminar />,
+          },
+          {
+            path: "live_online_seminar/:id",
+            element: <UniversityRegistration />,
+            loader: async ({ params }) => {
+              try {
+                const response = await axios.get(`${import.meta.env.VITE_REACT_APP_URL}/liveOnlineSeminar/${params.id}`);
+                return response.data;
+              } catch (error) {
+                console.error(error);
+                throw error;
+              }
+            }
+             
           },
           {
             path:"e_books",

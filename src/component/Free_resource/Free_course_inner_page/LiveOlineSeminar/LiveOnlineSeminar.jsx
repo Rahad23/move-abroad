@@ -1,51 +1,37 @@
 
-// import axios from "axios";
+import axios from "axios";
 import ChecklistSectionText from "./ChecklistSectionText/ChecklistSectionText";
 import CreateYourSuccessStory from "./CreateYourSuccessStory";
 import LiveOnlineSeminarCard from "./LiveOnlineSeminarCard";
-// import { useState } from "react";
+import { useState } from "react";
+import CalculateCountdown from "./CountDownFunction/CalculateCountdown";
 
 const LiveOnlineSeminar=()=>{
 
-    // const [liveSeminar, setLiveSeminar]=useState([]);
+    const [liveSeminar, setLiveSeminar]=useState([]);
 
   
-//   axios.get(`${import.meta.env.VITE_REACT_APP_URL}/liveOnlineSeminar`)
-//   .then(response => {
-//     setLiveSeminar(response.data);
-// })
-// .catch(error => {
-//   console.error(error);
-// });
-
-// const data = {
-//     _id: data?._id,
-//     universityName: data?.universityName,
-//     date: data?.date,
-//     universityImg: data?.universityImg,
-//     aboutUniversity: data?.aboutUniversity,
-//     registrationTiming: data?.registrationTiming,
-//     publishDate: data?.publishDate,
-//     classStartTime: data?.classStartTime,
-//     imagePath: data?.imagePath
-// }
+  axios.get(`${import.meta.env.VITE_REACT_APP_URL}/liveOnlineSeminar`)
+  .then(response => {
+    setLiveSeminar(response.data);
+})
+.catch(error => {
+  console.error(error);
+});
     return (
        <div>
-            {/* {
+                <div className="px-8">
+ {
                liveSeminar.map(data=>
-                <LiveOnlineSeminarCard
-                 id={data?._id} 
-                 universityName={data?.universityName}  
-                 date={data?.date}
-                 universityImg={data?.universityImg}
-                 registrationTiming={data?.registrationTiming}
-                 publishDate={data?.publishDate}
-                 classStartTime={data?.classStartTime}
-                 imagePath={data?.imagePath}
+                <LiveOnlineSeminarCard 
+                 data={data}
+                 countDown={CalculateCountdown(data?.publishDate, data?.registrationTiming)}
                  key={data?._id} />
                 ) 
-                } */}
-            <LiveOnlineSeminarCard />
+                }
+                </div>
+           
+            {/* <LiveOnlineSeminarCard /> */}
             <CreateYourSuccessStory />
             <ChecklistSectionText />
        </div>

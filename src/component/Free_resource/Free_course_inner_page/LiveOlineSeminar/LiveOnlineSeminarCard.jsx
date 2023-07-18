@@ -1,24 +1,14 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
-import axios from "axios";
+import { Link } from "react-router-dom";
 import CountDown from "./CountDown";
-import { useState } from "react";
-const LiveOnlineSeminarCard=()=>{
-const [liveSeminar, setLiveSeminar]=useState([]);
 
-  
-
-  axios.get(`${import.meta.env.VITE_REACT_APP_URL}/liveOnlineSeminar`)
-  .then(response => {
-    setLiveSeminar(response.data);
-})
-.catch(error => {
-  console.error(error);
-});
+// eslint-disable-next-line react/prop-types
+const LiveOnlineSeminarCard=({data, countDown})=>{
+   const {months, days, hours, minutes, seconds} = countDown.countdown;
     return (
-        <div className="px-8">
-          {
-            liveSeminar.map(data=>
-              <div className="card w-full bg-white shadow-lg text-gray-950 mt-12 pb-16 mx-auto" key={data?._id}>
+<>
+      <div className="card w-full bg-white shadow-lg text-gray-950 mt-12 pb-16 mx-auto" key={data?._id}>
         <div className="px-8 lg:py-3 mt-5">
         <h1 className="text-lg lg:text-2xl font-medium">MOVE<span className="text-[#FE0000]">ABROAD</span> Dream University Series: {data?.universityName}</h1>
         </div>
@@ -33,7 +23,14 @@ const [liveSeminar, setLiveSeminar]=useState([]);
                 <CountDown  date_={data?.date} publishDate={data?.publishDate} registrationTiming={data?.registrationTiming}  />
             </div>
             <div className="mt-2">
-                <button className="btn bg-[#FE0000] text-lg lg:text-xl text-white border-none rounded-none w-[226px] h-[50px] lg:h-[58px] hover:bg-[#fc0c0c] capitalize">Register now</button>
+            {months === 0 && days === 0 && hours === 0 && minutes === 0 && seconds === 0
+            ? 
+            <button className="btn bg-[#FE0000] text-lg lg:text-base text-white border-none rounded-none w-[226px] h-[50px] lg:h-[58px] hover:bg-[#fc0c0c] capitalize">Registration time is over</button>
+            :
+            <Link to={data._id} className="btn bg-[#FE0000] text-lg lg:text-xl text-white border-none rounded-none w-[226px] h-[50px] lg:h-[58px] hover:bg-[#fc0c0c] capitalize">Register now</Link>
+            }
+
+
                 <div className="bg-[#EDEBED] w-[90%] mx-auto px-2 py-4 mt-2">
                   <p className="text-black text-left lg:text-base text-sm font-serif">You will be connected to audio using your computer's microphone and speakers (VoIP). A headset is recommended.</p>
                 </div>
@@ -45,10 +42,7 @@ const [liveSeminar, setLiveSeminar]=useState([]);
       <p className="text-base font-serif leading-7">{data?.aboutUniversity}</p>
       </div>
   </div>
-              )
-          }
-        
-        </div>
+        </>
         
     )
 }

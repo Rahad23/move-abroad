@@ -1,5 +1,11 @@
+import { useLoaderData } from "react-router-dom";
+
 const UniversityRegistration=()=>{
-    return <></>
+    const liveSeminarData = useLoaderData();
+    console.log(liveSeminarData)
+    return <>
+        university registration
+    </>
 }
 
 export default UniversityRegistration;
