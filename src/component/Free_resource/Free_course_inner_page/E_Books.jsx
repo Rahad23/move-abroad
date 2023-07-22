@@ -11,7 +11,6 @@ const E_Books=()=>{
     const getEbookData=()=>{
         axios.get(`${eBookUrl}/ebook`)
         .then(response => {
-            console.log(response.data)
             setBookData(response.data);
         })
         .catch(error => {

@@ -1,4 +1,3 @@
-
 function CalculateCountdown(publishDate, registrationTiming) {
     const currentDate = new Date();
     const registrationPublish = publishDate;
