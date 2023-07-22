@@ -2,9 +2,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Link } from "react-router-dom";
 import CountDown from "./CountDown";
-
+  
 // eslint-disable-next-line react/prop-types
 const LiveOnlineSeminarCard=({data, countDown})=>{
+  // const currentUrl = useLocation();
+  //   const url = currentUrl.pathname.split("/")[2];
+  //   const usePath = url ? "" : url;
+  //   const usePath = currentUrl.pathname.split("/")[1];
+  //  console.log(url, usePath)
    const {months, days, hours, minutes, seconds} = countDown.countdown;
     return (
 <>
@@ -27,9 +32,8 @@ const LiveOnlineSeminarCard=({data, countDown})=>{
             ? 
             <button className="btn bg-[#FE0000] text-lg lg:text-base text-white border-none rounded-none w-[226px] h-[50px] lg:h-[58px] hover:bg-[#fc0c0c] capitalize">Registration time is over</button>
             :
-            <Link to={data._id} className="btn bg-[#FE0000] text-lg lg:text-xl text-white border-none rounded-none w-[226px] h-[50px] lg:h-[58px] hover:bg-[#fc0c0c] capitalize">Register now</Link>
+            <Link to={`${data._id}`} className="btn bg-[#FE0000] text-lg lg:text-xl text-white border-none rounded-none w-[226px] h-[50px] lg:h-[58px] hover:bg-[#fc0c0c] capitalize">Register now</Link>
             }
-
 
                 <div className="bg-[#EDEBED] w-[90%] mx-auto px-2 py-4 mt-2">
                   <p className="text-black text-left lg:text-base text-sm font-serif">You will be connected to audio using your computer's microphone and speakers (VoIP). A headset is recommended.</p>
