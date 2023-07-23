@@ -109,9 +109,9 @@ const router = createBrowserRouter([
               } catch (error) {
                 console.error(error);
                 throw error;
+                
               }
             }
-             
           },
           {
             path:"e_books",

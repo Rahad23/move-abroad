@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import app from '../firebase/FirebaseConfig';
+import { getSession } from '../component/Login_Registration/SessionManagement/SessionManagement';
 
 export const AuthContext = createContext();
 const auth = getAuth(app)
@@ -41,7 +42,7 @@ const AuthProvider = ({ children }) => {
 
         return () => unsubscribe();
     }, [])
-
+    const {isLoggedIn} = getSession();
     const authInfo = {
         createUser,
         signIn,
@@ -50,6 +51,7 @@ const AuthProvider = ({ children }) => {
         verificationEmail,
         passwordReset,
         user,
+        isLoggedIn
     }
     return (
         <AuthContext.Provider value={authInfo}>

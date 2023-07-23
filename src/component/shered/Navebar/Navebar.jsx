@@ -9,21 +9,18 @@ import { Link } from 'react-router-dom';
 import NavebarSearch from './NavebarSearch';
 import "../Footer/Footer.css";
 import { AuthContext } from '../../../contexts/AuthContext';
+import { clearSession } from '../../Login_Registration/SessionManagement/SessionManagement';
 const Navebar= () => {
-  const {user, logOut} = useContext(AuthContext);
+  const {isLoggedIn} = useContext(AuthContext);
+
     const [icon, setIcon]=useState(false);
     const switchIcon=(clicks)=>{
         setIcon(!clicks);
     }
 
     const logout=()=>{
-      logOut()
-      .then(() => {
-        // Sign-out successful.
-      }).catch((error) => {
-        console.log(error)
-        // An error happened.
-      });
+      clearSession();
+      location.reload();
     }
 
 return (
@@ -171,7 +168,7 @@ return (
   </div>
    <div className='flex items-center justify-center gap-x-4'>
     {
-       user?.uid ? <span onClick={()=>logout()} className="btn bg-[#274396] border-none hover:bg-[#D82027] w-[88px] h-[56px] py-5 px-[4px] text-sm text-white">Sign out</span> :<Link to={"/login"} className="btn bg-[#274396] border-none hover:bg-[#D82027] w-[80px] h-[56px] py-5 px-[4px] text-sm text-white">Sign in</Link>
+       isLoggedIn ? <span onClick={()=>logout()} className="btn bg-[#274396] border-none hover:bg-[#D82027] w-[88px] h-[56px] py-5 px-[4px] text-sm text-white">Sign out</span> :<Link to={"/login"} className="btn bg-[#274396] border-none hover:bg-[#D82027] w-[80px] h-[56px] py-5 px-[4px] text-sm text-white">Sign in</Link>
     }
    
    </div>

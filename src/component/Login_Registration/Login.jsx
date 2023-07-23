@@ -2,37 +2,97 @@ import { useLottie } from "lottie-react";
 import loginAnimation from "../../lottie/login.json";
 import Navebar from "../shered/Navebar/Navebar";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import bcrypt from 'bcryptjs';
+import axios from "axios";
+import { setSession } from "./SessionManagement/SessionManagement";
 
 const Login =()=>{
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const {signIn} = useContext(AuthContext);
+  const [users, setUsers]=useState();
   const navigate = useNavigate();
-  
+  const [emailNotMatch, setEmailNotMatch]=useState(false);
+  const [passwordNotMatch, setPasswordNotMatch]=useState(false);
+
+  useEffect(()=>{
+    axios.get(`${import.meta.env.VITE_REACT_APP_URL}/users`)
+    .then(response => {
+      setUsers(response.data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+  },[])
+
+
   const onSubmit = data => {
     if(data?.email && data?.password){
-      signIn(data?.email, data?.password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        if(user?.uid && user?.email){
-            toast.success("Login success",{
-              duration: 4000,
-            })
-            navigate("/");
-        }
-        // ...
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-unused-vars
-        const errorCode = error.code;
-        // eslint-disable-next-line no-unused-vars
-        const errorMessage = error.message;
-      });
+      if(emailNotMatch){
+        return toast.error("Email is incorrect!")
+      }
+      if(passwordNotMatch){
+        return toast.error("Password is incorrect!");
+      }
+      users.map(user=>
+        bcrypt.compare(data?.password, user?.password, function(err, isMatch) {
+          if(user?.email !== data?.email){
+            setPasswordNotMatch(false);
+             return setEmailNotMatch(true);
+          }
+          if (err) {
+            console.error(err);
+          } else {
+            if (isMatch) {
+              setEmailNotMatch(false);
+              setPasswordNotMatch(false);
+                  toast.success("login successfully")
+                    // axios.post(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/jwt`, {
+                    //   headers: {
+                    //     'Content-Type': 'application/json',
+                    //   },
+                    //   email: email,
+                    // })
+                    // .then((response) => {
+                    //   console.log(response.data.accessToken);
+                    //   setSession(response.data.accessToken, true);
+                    // }, (error) => {
+                    //   console.log(error);
+                    // });
+                    console.log("ok")
+                    setSession(null, true);
+                  navigate("/")
+                  reset();
+            } else {
+              setEmailNotMatch(false);
+              setPasswordNotMatch(true);
+            }
+          }
+        })
+        )
+
+      // signIn(data?.email, data?.password)
+      // .then((userCredential) => {
+      //   // Signed in 
+      //   const user = userCredential.user;
+      //   if(user?.uid && user?.email){
+      //       toast.success("Login success",{
+      //         duration: 4000,
+      //       })
+      //       navigate("/");
+      //   }
+      //   // ...
+      // })
+      // .catch((error) => {
+      //   // eslint-disable-next-line no-unused-vars
+      //   const errorCode = error.code;
+      //   // eslint-disable-next-line no-unused-vars
+      //   const errorMessage = error.message;
+      // });
     }
   };
 

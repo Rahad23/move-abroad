@@ -3,53 +3,67 @@ import signUpAnimation from "../../lottie/sign_up.json";
 import Navebar from "../shered/Navebar/Navebar";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import { useEffect, useState } from "react";
+// import { AuthContext } from "../../contexts/AuthContext";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-
+import bcrypt from 'bcryptjs';
+import { setSession } from "./SessionManagement/SessionManagement";
 const Registration=()=>{
-  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const [password, setPassword] = useState('');
+  const [hashedPassword, setHashedPassword] = useState('');
+ 
+  const saltRounds = 10;
+
+  useEffect(()=>{
+    bcrypt.genSalt(saltRounds, function(err, salt) {
+      if (err) {
+        console.error(err);
+      } else {
+        bcrypt.hash(password, salt, function(err, hash) {
+          if (err) {
+            console.error(err);
+          } else {
+            setHashedPassword(hash);
+          }
+        });
+      }
+    });
+  },[password])
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
   // const process = import.meta.env;
 
-  const {createUser, user} = useContext(AuthContext);
-  const navigate = useNavigate();
-  if(user?.uid){
-    navigate('/login')
-  }
+  // const {isLoggedIn} = useContext(AuthContext);
+  
+ const navigate = useNavigate(); 
   const onSubmit = data => {
-    if(data?.email && data?.fullName && data?.password){
-      createUser(data?.email, data?.password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        if(user?.uid){
-        axios.post('http://localhost:3000/users', {
-        fullName: data?.fullName,
-        email: data?.email,
-      })
-      .then(function (response) {
-        if(response?.status === 200){
-          toast.success("Registration successful",{
-            duration: 4000,
-          });
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-        }
-        // ...
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-unused-vars
-        const errorCode = error.code;
-        // eslint-disable-next-line no-unused-vars
-        const errorMessage = error.message;
-        console.log(errorMessage)
-        // ..
-      });
+
+    setPassword(data?.password);
+
+    if(data?.email && data?.fullName && hashedPassword){
+
+        axios.post(`${import.meta.env.VITE_REACT_APP_URL}/users`,{
+          fullName: data?.fullName,
+          email: data?.email,
+          password: hashedPassword
+        })
+        .then(function (response) {
+          
+          if(response.status === 200){
+              toast.success("Registration successful");
+              setSession(null, true)
+              navigate('/');
+              location.reload();
+              reset();
+          }
+        })
+        .catch(function (error) {
+            return toast.error(error?.response?.data);
+        });
     }
+
   };
     const options = {
         animationData: signUpAnimation,
