@@ -13,67 +13,93 @@ import { setSession } from "./SessionManagement/SessionManagement";
 const Login =()=>{
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
-  const {signIn} = useContext(AuthContext);
-  const [users, setUsers]=useState();
+  const {isLoggedIn} = useContext(AuthContext);
+  const [user, setUsers]=useState('');
   const navigate = useNavigate();
-  const [emailNotMatch, setEmailNotMatch]=useState(false);
   const [passwordNotMatch, setPasswordNotMatch]=useState(false);
+  const [submitedEmail, setSubmitedEmail] = useState('');
+  const [submitedPassword, setSubmitedPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
-  useEffect(()=>{
-    axios.get(`${import.meta.env.VITE_REACT_APP_URL}/users`)
-    .then(response => {
-      setUsers(response.data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
-  },[])
+  if(isLoggedIn){
+    navigate("/");
+  }
+  
+  if(submitedEmail){
+      axios.get(`${import.meta.env.VITE_REACT_APP_URL}/users?email=${submitedEmail}`)
+      .then(response => {
+        setErrorMessage('');
+        setUsers(response.data);
+    })
+    .catch(error => {
+      setErrorMessage(error.response.data);
+    });
+    setSubmitedEmail("");
+  }
 
+  useEffect(() => {
+
+      const handleLoginFeedback = async () => {
+        if (loginSuccess) {
+         return toast.success("Login successfully");
+        } 
+         if (errorMessage) {
+          setPasswordNotMatch(false);
+          setLoginSuccess(false);
+        return toast.error(errorMessage);
+        } 
+        if (passwordNotMatch) {
+          setErrorMessage("");
+          setLoginSuccess(false);
+        return  toast.error("Password is incorrect!");
+        }
+      };
+    
+      handleLoginFeedback();
+  }, [errorMessage, passwordNotMatch, loginSuccess]);
+  
+
+  if(user){
+    bcrypt.compare(submitedPassword, user?.password, function(err, isMatch) {
+      if (err) {
+        setErrorMessage('');
+        console.error(err);
+      } else {
+        if (isMatch) {
+          console.log('is match')
+          setSubmitedPassword("");
+          setErrorMessage('');
+          setPasswordNotMatch(false);
+          setLoginSuccess(true)
+                // axios.post(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/jwt`, {
+                //   headers: {
+                //     'Content-Type': 'application/json',
+                //   },
+                //   email: email,
+                // })
+                // .then((response) => {
+                //   console.log(response.data.accessToken);
+                //   setSession(response.data.accessToken, true);
+                // }, (error) => {
+                //   console.log(error);
+                // });
+             setSession(null, true);
+             location.reload();
+              navigate("/")
+              reset();
+        } else {
+          setSubmitedPassword("");
+          setPasswordNotMatch(true);
+        }
+      }
+    })
+  }
 
   const onSubmit = data => {
     if(data?.email && data?.password){
-      if(emailNotMatch){
-        return toast.error("Email is incorrect!")
-      }
-      if(passwordNotMatch){
-        return toast.error("Password is incorrect!");
-      }
-      users.map(user=>
-        bcrypt.compare(data?.password, user?.password, function(err, isMatch) {
-          if(user?.email !== data?.email){
-            setPasswordNotMatch(false);
-             return setEmailNotMatch(true);
-          }
-          if (err) {
-            console.error(err);
-          } else {
-            if (isMatch) {
-              setEmailNotMatch(false);
-              setPasswordNotMatch(false);
-                  toast.success("login successfully")
-                    // axios.post(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/jwt`, {
-                    //   headers: {
-                    //     'Content-Type': 'application/json',
-                    //   },
-                    //   email: email,
-                    // })
-                    // .then((response) => {
-                    //   console.log(response.data.accessToken);
-                    //   setSession(response.data.accessToken, true);
-                    // }, (error) => {
-                    //   console.log(error);
-                    // });
-                    console.log("ok")
-                    setSession(null, true);
-                  navigate("/")
-                  reset();
-            } else {
-              setEmailNotMatch(false);
-              setPasswordNotMatch(true);
-            }
-          }
-        })
-        )
+      setSubmitedEmail(data?.email);
+      setSubmitedPassword(data?.password);
 
       // signIn(data?.email, data?.password)
       // .then((userCredential) => {
