@@ -43,6 +43,7 @@ const AuthProvider = ({ children }) => {
         return () => unsubscribe();
     }, [])
     const {isLoggedIn} = getSession();
+    console.log(isLoggedIn)
     const authInfo = {
         createUser,
         signIn,

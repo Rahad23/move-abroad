@@ -6,7 +6,6 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import bcrypt from 'bcryptjs';
 import axios from "axios";
 import { setSession } from "./SessionManagement/SessionManagement";
 
@@ -20,17 +19,24 @@ const Login =()=>{
   const [submitedEmail, setSubmitedEmail] = useState('');
   const [submitedPassword, setSubmitedPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [loginSuccess, setLoginSuccess] = useState(false);
-
   if(isLoggedIn){
     navigate("/");
   }
   
+// if(passwordNotMatch){
+//   toast.error("Password is incorrect!");
+// }
+
   if(submitedEmail){
-      axios.get(`${import.meta.env.VITE_REACT_APP_URL}/users?email=${submitedEmail}`)
+      axios.get(`${import.meta.env.VITE_REACT_APP_URL}/users?email=${submitedEmail}&password=${submitedPassword}`)
       .then(response => {
         setErrorMessage('');
         setUsers(response.data);
+        if(!response.data.isMatch){
+          setPasswordNotMatch(true);
+        }else{
+          toast.success("Login successfully");
+        }
     })
     .catch(error => {
       setErrorMessage(error.response.data);
@@ -39,68 +45,63 @@ const Login =()=>{
   }
 
   useEffect(() => {
-
       const handleLoginFeedback = async () => {
-        if (loginSuccess) {
-         return toast.success("Login successfully");
-        } 
          if (errorMessage) {
-          setPasswordNotMatch(false);
-          setLoginSuccess(false);
-        return toast.error(errorMessage);
-        } 
+          return toast.error(errorMessage);
+        }
         if (passwordNotMatch) {
-          setErrorMessage("");
-          setLoginSuccess(false);
-        return  toast.error("Password is incorrect!");
+        return toast.error("Password is incorrect!");
         }
       };
     
       handleLoginFeedback();
-  }, [errorMessage, passwordNotMatch, loginSuccess]);
+  }, [user?.isMatch, errorMessage, passwordNotMatch]);
   
 
-  if(user){
-    bcrypt.compare(submitedPassword, user?.password, function(err, isMatch) {
-      if (err) {
-        setErrorMessage('');
-        console.error(err);
-      } else {
-        if (isMatch) {
-          console.log('is match')
-          setSubmitedPassword("");
-          setErrorMessage('');
-          setPasswordNotMatch(false);
-          setLoginSuccess(true)
-                // axios.post(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/jwt`, {
-                //   headers: {
-                //     'Content-Type': 'application/json',
-                //   },
-                //   email: email,
-                // })
-                // .then((response) => {
-                //   console.log(response.data.accessToken);
-                //   setSession(response.data.accessToken, true);
-                // }, (error) => {
-                //   console.log(error);
-                // });
-             setSession(null, true);
-             location.reload();
-              navigate("/")
-              reset();
-        } else {
-          setSubmitedPassword("");
-          setPasswordNotMatch(true);
-        }
-      }
-    })
-  }
+  // if(user){
+  //   console.log(user)
+  //   bcrypt.compare(submitedPassword, user?.password, function(err, isMatch) {
+  //   console.log(isMatch)
+  //   if (err) {
+  //     // setErrorMessage('');
+  //     setPasswordNotMatch(false)
+  //     console.error(err);
+  //   } else {
+  //     if (isMatch) {
+  //       console.log('is match')
+  //       // setSubmitedPassword("");
+  //       // setPasswordNotMatch(false)
+  //       setLoginSuccess(true)
+  //             // axios.post(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/jwt`, {
+  //             //   headers: {
+  //             //     'Content-Type': 'application/json',
+  //             //   },
+  //             //   email: email,
+  //             // })
+  //             // .then((response) => {
+  //             //   console.log(response.data.accessToken);
+  //             //   setSession(response.data.accessToken, true);
+  //             // }, (error) => {
+  //             //   console.log(error);
+  //             // });
+  //         //  setSession(null, true);
+  //         //  location.reload();
+  //         //   navigate("/")
+  //         //   reset();
+  //     } else {
+  //       // setSubmitedPassword("");
+  //       setPasswordNotMatch(true);
+  //     }
+  //   }
+  // })
+  // }
+
+
 
   const onSubmit = data => {
     if(data?.email && data?.password){
       setSubmitedEmail(data?.email);
       setSubmitedPassword(data?.password);
-
       // signIn(data?.email, data?.password)
       // .then((userCredential) => {
       //   // Signed in 
@@ -121,7 +122,14 @@ const Login =()=>{
       // });
     }
   };
-
+   if(user){
+    setSession(null, user?.isMatch);
+    if(user?.isMatch){
+      location.reload();
+      navigate('/');
+      reset();
+    }
+   }
     const options = {
         animationData: loginAnimation,
         loop: true,

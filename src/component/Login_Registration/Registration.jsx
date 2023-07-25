@@ -3,34 +3,14 @@ import signUpAnimation from "../../lottie/sign_up.json";
 import Navebar from "../shered/Navebar/Navebar";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 // import { AuthContext } from "../../contexts/AuthContext";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import bcrypt from 'bcryptjs';
 import { setSession } from "./SessionManagement/SessionManagement";
 const Registration=()=>{
 
   const [password, setPassword] = useState('');
-  const [hashedPassword, setHashedPassword] = useState('');
- 
-  const saltRounds = 10;
-
-  useEffect(()=>{
-    bcrypt.genSalt(saltRounds, function(err, salt) {
-      if (err) {
-        console.error(err);
-      } else {
-        bcrypt.hash(password, salt, function(err, hash) {
-          if (err) {
-            console.error(err);
-          } else {
-            setHashedPassword(hash);
-          }
-        });
-      }
-    });
-  },[password])
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   // const process = import.meta.env;
@@ -42,12 +22,11 @@ const Registration=()=>{
 
     setPassword(data?.password);
 
-    if(data?.email && data?.fullName && hashedPassword){
-
+    if(data?.email && data?.fullName && data?.password){
         axios.post(`${import.meta.env.VITE_REACT_APP_URL}/users`,{
           fullName: data?.fullName,
           email: data?.email,
-          password: hashedPassword
+          password: data?.password
         })
         .then(function (response) {
           
