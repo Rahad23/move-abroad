@@ -3,14 +3,11 @@ import signUpAnimation from "../../lottie/sign_up.json";
 import Navebar from "../shered/Navebar/Navebar";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useState } from "react";
 // import { AuthContext } from "../../contexts/AuthContext";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { setSession } from "./SessionManagement/SessionManagement";
 const Registration=()=>{
-
-  const [password, setPassword] = useState('');
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   // const process = import.meta.env;
@@ -19,8 +16,6 @@ const Registration=()=>{
   
  const navigate = useNavigate(); 
   const onSubmit = data => {
-
-    setPassword(data?.password);
 
     if(data?.email && data?.fullName && data?.password){
         axios.post(`${import.meta.env.VITE_REACT_APP_URL}/users`,{
